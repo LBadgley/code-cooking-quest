@@ -29,7 +29,7 @@ const eastonChoice = {
     result: 'You quickly and efficiently get through the forest unscathed, gaining valuable skills along the way. Gain 35 HP and 80 gold',
     hp: 35,
     gold: 80,
-    image: '../assets/easton.jpg',
+    image: '../assets/easton.gif',
     audio: '../assets/sfx/easton.wav'
 };
 

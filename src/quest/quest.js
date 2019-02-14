@@ -1,4 +1,10 @@
 import quests from '../quests.js';
+const json = window.localStorage.getItem('user');
+if(!json) {
+    window.location = '/';
+}
+const user = JSON.parse(json);
+const completed = user.completed;
 
 const searchParams = new URLSearchParams(window.location.search);
 
@@ -46,6 +52,7 @@ for(let i = 0; i < choices.length; i++) {
 const resultNode = document.getElementById('result');
 choicesNode.addEventListener('submit', function(event) {
     event.preventDefault();
+    const nextAdventureNode = document.getElementById('next');
 
     const formData = new FormData(choicesNode);
 
@@ -59,10 +66,16 @@ choicesNode.addEventListener('submit', function(event) {
             result = quest.choices[i].result;
             imageNode.src = quest.choices[i].image;
             audioNode.src = quest.choices[i].audio;
+            user.hp += quest.choices[i].hp;
+            user.gold += quest.choices[i].gold;
         }
     }
     
     resultNode.textContent = result;
 
+    user.completed[questName] = true;
+    nextAdventureNode.hidden = false;
+    const jsonUpdate = JSON.stringify(user);
+    window.localStorage.setItem('user', jsonUpdate);
     console.log(chosen);
 });

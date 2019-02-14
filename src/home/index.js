@@ -7,7 +7,13 @@ formNode.addEventListener('submit', function(event) {
     const name = formData.get('name');
     const user = {
         name: name,
-        race: formData.get('race')
+        race: formData.get('race'),
+        hp: 75,
+        gold: 13,
+        completed: {
+            forest: false,
+            clouds: false
+        }
     };
     const json = JSON.stringify(user);
     window.localStorage.setItem('user', json);
