@@ -1,4 +1,5 @@
 import quests from '../quests.js';
+import scoreDisplay from '../score-display.js';
 const json = window.localStorage.getItem('user');
 if(!json) {
     window.location = '/';
@@ -8,6 +9,7 @@ const completed = user.completed;
 if(completed.clouds && completed.forest) {
     window.location = 'end.html';
 }
+scoreDisplay(user);
 
 
 const questLinksNode = document.getElementById('quest-links');

@@ -1,3 +1,4 @@
+import scoreDisplay from '../score-display.js';
 const header = document.getElementById('header');
 const fate = document.getElementById('fate');
 
@@ -6,6 +7,7 @@ if(!json) {
     window.location = '/';
 }
 const user = JSON.parse(json);
+scoreDisplay(user);
 
 const hp = user.hp;
 const gold = user.gold;
@@ -19,7 +21,7 @@ if(hp <= 0) {
     header.textContent = headerMsg;
 }
 else {
-    headerMsg = 'Congratulations, you survived!';
+    headerMsg = 'Congratulations, ' + name + ', you survived!';
     header.textContent = headerMsg;
     fateMsg = 'You are ';
     if(hp < 65) {

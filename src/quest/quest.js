@@ -1,10 +1,12 @@
 import quests from '../quests.js';
+import scoreDisplay from '../score-display.js';
 const json = window.localStorage.getItem('user');
 if(!json) {
     window.location = '/';
 }
 const user = JSON.parse(json);
 const completed = user.completed;
+scoreDisplay(user);
 
 const searchParams = new URLSearchParams(window.location.search);
 
@@ -72,6 +74,7 @@ choicesNode.addEventListener('submit', function(event) {
     }
     
     resultNode.textContent = result;
+    scoreDisplay(user);
 
     user.completed[questName] = true;
     nextAdventureNode.hidden = false;
