@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./src/home/index.css">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <h1>Sign In</h1>
+    </header>
+    <main>
+        <form id="sign-in">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" placeholder="Your Name Here">
+            <fieldset>
+                <legend>Choose your race</legend>
+                    <input 
+                    type="radio" 
+                    name="race" 
+                    id="wizard" 
+                    value="wizard"
+                    >
+                    <label for="wizard">Wizard</label>
+                    <br>
+                    <input 
+                    type="radio" 
+                    name="race" 
+                    id="unicorn" 
+                    value="unicorn"
+                    >
+                    <label for="unicorn">Unicorn</label>
+                    <br>
+                    <input 
+                    type="radio" 
+                    name="race" 
+                    id="t-rex-vampire" 
+                    value="t-rex-vampire"
+                    >
+                    <label for="t-rex-vampire">T-Rex Vampire</label>
+                </fieldset>
+            <button>Submit</button>
+        </form>
+        
+    </main>
+    <script type="module" src="./src/home/index.js"></script>
+</body>
+</html>
