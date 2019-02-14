@@ -21,8 +21,12 @@ body {
 
 }
 header {
-    background: green;
-    color: yellow;
     display: flex;
-    align-items: center;
+    flex-direction: row;
+    justify-content: flex-end;
+    border: 3px solid black;
+    width: 100%;
+}
+.points {
+    padding: 0px 10px;
 }
